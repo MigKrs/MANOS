@@ -18,8 +18,24 @@ void main() {
   ) async {
     await tester.pumpWidget(const ManosSegurasApp());
 
-    await tester.tap(find.text('Comenzar auditoría'));
+    ///CAMBIOOO NEW
+    ///final boton = find.text('Comenzar auditoría');
+    ///expect(boton, findsOneWidget);
+    ///await tester.ensureVisible(boton);
+    ///await tester.tap(boton);
+    ///await tester.pumpAndSettle();
+    ///expect(find.text('Los 5 Momentos'), findsNothing);
+    
+    ///ANT
+    ///    await tester.tap(find.text('Comenzar auditoría'));
+    ///     await tester.pumpAndSettle();
+
+    final boton = find.text('Comenzar auditoría');
+    expect(boton, findsOneWidget);
+    await tester.ensureVisible(boton);
+    await tester.tap(boton);
     await tester.pumpAndSettle();
+    expect(find.text('Los 5 Momentos'), findsNothing);
 
     expect(find.text('Hospital Regional del Cusco'), findsOneWidget);
   });

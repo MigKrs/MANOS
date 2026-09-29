@@ -46,7 +46,11 @@ void main() {
     // La lista renderizada muestra los dos años recibidos.
     expect(find.text('2023'), findsOneWidget);
     expect(find.text('2024'), findsOneWidget);
-    expect(find.text('72.3 %'), findsOneWidget);
+
+    //AQUI EL CAMBIOOOOOOOOOOOOOO EL - expect(find.text('72.3 %'), findsOneWidget);
+    //AQUI EL CAMBIOOOOOOOOOOOOOO EL - expect(find.text('72.3 %'), findsNWidgets(2));  NEW
+
+    expect(find.text('72.3 %'), findsNWidgets(2));
   });
 
   testWidgets('muestra el estado de error cuando el servicio falla', (
